@@ -1,0 +1,14 @@
+<view class="result" wx:if="{{img}}">
+  <view class="imgWrap">
+    <image src="{{img}}" class="img" mode="aspectFit" />
+  </view>
+
+  <!-- 按钮 -->
+  <view class="buttonWrap">
+    <view class="btn w3" bindtap="save">保存到相册</view>
+    <button class="btn w3 share" open-type="share">分享给好友</button>
+  </view>
+
+</view>
+
+<canvas canvasId="myCanvas" class="myCanvas"></canvas>

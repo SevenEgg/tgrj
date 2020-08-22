@@ -1,0 +1,7 @@
+page {
+  background: #fceeb5;
+}
+
+ad {
+  padding: 10px 0;
+}

@@ -1,0 +1,48 @@
+<view class="index">
+    <view class="center">
+        <!-- 卡片  -->
+        <view class="card">
+            <!-- 左侧 -->
+            <view class="additional">
+                <picker range-key="name" mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{imgList}}">
+                    <view>
+                        <image class="card-avantar ps" src="{{avatar}}" />
+                    </view>
+                </picker>
+                <view class="points ps" bindtap="changeName">{{name}}</view>
+            </view>
+            <!-- 右侧 -->
+            <view class="general">
+                <view class="time">{{time}}</view>
+                <textarea bindinput="inputFn" maxlength="170" class="text" value="{{value}}" />
+            </view>
+        </view>
+        <!-- 按钮 -->
+        <view class="buttonWrap">
+            <view class="btn" bindtap="copy">复制文字</view>
+            <view class="btn" bindtap="randeNext">随机生成</view>
+            <view class="btn" bindtap="openAD">生成卡片</view>
+        </view>
+
+        <!-- 说明 -->
+        <view class="tips">
+            <view class="title">使用说明</view>
+            <view class="tip">1、点击头像可切换图片</view>
+            <view class="tip">2、点击昵称处可自定义昵称，长度不得超过6个字符</view>
+        </view>
+    </view>
+
+    <!-- 弹窗 -->
+    <view class="modalWrapper" wx:if="{{openWrap}}" catchtouchmove="{{true}}">
+        <view class="{{openName}}">
+            <view class="head">请输入你的昵称</view>
+            <!-- 输入框 -->
+            <input maxlength="6" bindinput="nichengInput" value="{{nicheng}}" class="nicheng" placeholder="输入昵称" />
+            <!-- 按钮组 -->
+            <view class="btnGroup">
+                <view class="btn" bindtap="close">取消</view>
+                <view class="btn" bindtap="cName">确认</view>
+            </view>
+        </view>
+    </view>
+</view>
